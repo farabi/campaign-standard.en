@@ -271,7 +271,7 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
         if(UIApplication.shared.applicationState != .active) {
             let deliveryId = userInfo["_dId"] as? String
             let broadlogId = userInfo["_mId"] as? String
-            let acsDeliveryTracking = userInfo["_acsDeliveryTracking"] as? String
+            var acsDeliveryTracking = userInfo["_acsDeliveryTracking"] as? String
             /*
             This is to handle deliveries created before 21.1 release or deliveries with custom template where acsDeliveryTracking is not available.
             */
@@ -305,7 +305,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
         let userInfo = notification.request.content.userInfo
         let deliveryId = userInfo["_dId"] as? String
         let broadlogId = userInfo["_mId"] as? String
-        let acsDeliveryTracking = userInfo["_acsDeliveryTracking"] as? String
+        var acsDeliveryTracking = userInfo["_acsDeliveryTracking"] as? String
         /*
         This is to handle deliveries created before 21.1 release or deliveries with custom template where acsDeliveryTracking is not available.
         */
@@ -381,7 +381,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
             print("Dismiss Action")
             let deliveryId = userInfo["_dId"] as? String
             let broadlogId = userInfo["_mId"] as? String
-            let acsDeliveryTracking = userInfo["_acsDeliveryTracking"] as? String
+            var acsDeliveryTracking = userInfo["_acsDeliveryTracking"] as? String
             /*
             This is to handle deliveries created before 21.1 release or deliveries with custom template where acsDeliveryTracking is not available.
             */
@@ -428,7 +428,7 @@ class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
             //This is to handle the Dismiss Action
             let deliveryId = userInfo["_dId"] as? String
             let broadlogId = userInfo["_mId"] as? String
-            let acsDeliveryTracking = userInfo["_acsDeliveryTracking"] as? String
+            var acsDeliveryTracking = userInfo["_acsDeliveryTracking"] as? String
             /*
             This is to handle deliveries created before 21.1 release or deliveries with custom template where acsDeliveryTracking is not available.
             */
@@ -450,7 +450,7 @@ class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
             //This is to handle the tracking when the app opens
             let deliveryId = userInfo["_dId"] as? String
             let broadlogId = userInfo["_mId"] as? String
-            let acsDeliveryTracking = userInfo["_acsDeliveryTracking"] as? String
+            var acsDeliveryTracking = userInfo["_acsDeliveryTracking"] as? String
             /*
             This is to handle deliveries created before 21.1 release or deliveries with custom template where acsDeliveryTracking is not available.
             */
